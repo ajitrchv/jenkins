@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    parameters{
+        choice(choices: ["Test", "DEV", "ENV", "SIT", "ST"], description: "Choose one:", name: "myChoice")
+    }
+    stages{
+        stage("Demo"){
+
+            steps{
+                echo "Boolean param is set to: ${params.myChoice}"
+            }
+
+        }
+    }
+}

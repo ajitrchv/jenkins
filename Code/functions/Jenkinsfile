@@ -1,0 +1,30 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("Demo1"){
+            steps{
+                myFunc("Hello from demo", 1)
+            }
+        }
+        stage("Demo2"){
+            steps{
+                myFunc("Hi from demo", 2)
+            }
+        }
+        stage("Demo3"){
+            steps{
+                myFunc("Hey from demo", 3)
+            }
+        }
+        stage("Demo4"){
+            steps{
+                myFunc("Ciao from demo", 4)
+            }
+        }
+    }
+}
+
+def myFunc(String myText, int myNumber){
+    echo "This stage says ${myText} : ${myNumber}"
+}
